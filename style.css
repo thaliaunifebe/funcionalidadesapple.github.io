@@ -1,0 +1,16 @@
+body {
+    background-color: #c7c7c7;
+    margin: 0;
+    font-family: "Kulim Park", sans-serif;
+}
+
+.container-principal {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 100px;
+}
+
+.container-principal h1 {
+    font-weight: 600;
+}
