@@ -4,8 +4,7 @@
 iOS 26 chegou com um visual renovado, moderno e ainda mais mágico. <br>
 Uma experiência pensada para ser mais bonita, fluida e intuitiva. <br>
 Com design elegante, recursos inteligentes e aquela sensação Apple que transforma o simples em extraordinário. <br>
-iOS 26. Novo visual. Ainda mais mágico.
-<br>
+<br><br>
 Elaborado por:<br>
 Aline Lima<br>
 Jhonny<br>
