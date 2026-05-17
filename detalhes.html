@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>iPhone 17</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:40px 20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.topo{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.galeria{
+    width:100%;
+    max-width:400px;
+    position:relative;
+    overflow:hidden;
+}
+
+.slides{
+    display:flex;
+    transition:0.5s ease;
+}
+
+.slide{
+    min-width:100%;
+    position:relative;
+}
+
+.slide img{
+    width:100%;
+    height:550px;   
+}
+
+.btn-slide{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    z-index:10;
+}
+
+.btn-slide:hover{
+    background:#000;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+.info{
+    flex:1;
+    padding:30px;
+}
+
+.info h1{
+    margin-bottom:15px;
+    font-size:36px;
+}
+
+.descricao{
+    color:#555;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.specs{
+    padding:30px;
+    border-top:1px solid #ddd;
+}
+
+.specs ul{
+    list-style:none;
+}
+
+.specs li{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    color:#444;
+    line-height:1.6;
+}
+
+@media(max-width:768px){
+
+    .topo{
+        flex-direction:column;
+    }
+
+    .galeria{
+        max-width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="topo">
+        <div class="galeria">
+
+            <button class="btn-slide prev" onclick="mudarSlide(-1)">❮</button>
+            <button class="btn-slide next" onclick="mudarSlide(1)">❯</button>
+
+            <div class="slides" id="slides">
+
+                <div class="slide">                   
+                    <img src="788.png" alt="iPhone 1">
+                </div>
+
+                <div class="slide">                   
+                    <img src="799.png" alt="iPhone 2">
+                </div>
+
+                <div class="slide">             
+                    <img src="766.png" alt="iPhone 3">
+                </div>
+
+            </div>
+
+        </div>
+
+     <!--Todas as informações do produto.-->
+        <div class="info">
+
+            <h1>iPhone 17</h1>
+
+            <p class="descricao">
+                Novo visual. Ainda mais mágico.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Especificações do produto -->
+     <div class="specs">
+      <ul>
+        <li><strong>Tela:</strong> 6,3 polegadas com ProMotion de até 120 Hz Nota de rodapé 2. Parte da frente em Ceramic Shield 2, três vezes mais resistente a arranhões. Estrutura unibody em alumínio forjado.</li>
+        <li><strong>Sistema de câmera Pro:</strong> Zoom de 8x com qualidade óptica e câmeras traseiras de 48 MP.</li>
+        <li><strong>Câmera frontal:</strong> Center Stage de 18 MP. Mais flexibilidade para enquadrar suas fotos. Selfies em grupo mais inteligentes. Vídeo com Captura Dupla para gravação simultânea nas câmeras frontal e traseira. E muito mais.</li>
+        <li><strong>Cores:</strong> Chip A19 Pro com GPU de 6 núcleos. Resfriado por evaporação. Super‑rápido.</li>
+        <li><strong>Bateria:</strong> Longa duração para até 31 horas de reprodução de vídeo Nota de rodapé 3.</li>
+        <li><strong>Novo Visual:</strong> iOS 26 e Apple Intelligence. Recursos mais inteligentes Nota de rodapé 1.</li>
+      </ul>
+    </div>
+</div>
+
+<script>
+//Guarda qual slide está aparecendo-->
+let slideAtual = 0;
+
+//Função para trocar de slide-->
+function mudarSlide(direcao){
+
+    //Pega a div que contém todos os slides-->
+    const slides = document.getElementById("slides");
+
+    //Conta quantos slides existem-->
+    const totalSlides = document.querySelectorAll(".slide").length;
+
+    //Soma ou diminui o slide atual-->
+    slideAtual += direcao;
+
+    //Se passar do último slide, volta para o primeiro-->
+    if(slideAtual >= totalSlides){
+        slideAtual = 0;
+    }
+    //Se voltar antes do primeiro, vai para o último-->
+    if(slideAtual < 0){
+        slideAtual = totalSlides - 1;
+    }
+   //Move os slides horizontalmente-->
+    slides.style.transform =
+        `translateX(-${slideAtual * 100}%)`;
+}
+</script>
+
+</body>
+</html>
